@@ -15,4 +15,4 @@ install:
   - composer install --no-progress --prefer-dist
 
 script:
-  - ./bin/phpspec run
+  - ./vendor/bin/phpspec run
