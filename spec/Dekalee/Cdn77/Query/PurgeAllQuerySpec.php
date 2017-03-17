@@ -13,7 +13,7 @@ class PurgeAllQuerySpec extends ObjectBehavior
 {
     function let(Client $client, ListResourcesQuery $listResourcesQuery)
     {
-        $listResourcesQuery->execute()->willReturn([['id' => 1, 'cname' => 'hosted.adback.co'], ['id' => 2, 'cname' => 'hosted.adback.co'], ['id' => 3, 'cname' => 'example.test.com']]);
+        $listResourcesQuery->execute()->willReturn([['id' => 1, 'cname' => 'foo.bar.co'], ['id' => 2, 'cname' => 'foo.bar.co'], ['id' => 3, 'cname' => 'example.test.com']]);
         $client->post(Argument::any(), Argument::any())->willReturn(null);
         $this->beConstructedWith($listResourcesQuery, 'login', 'password', 'url', $client);
     }
@@ -52,7 +52,7 @@ class PurgeAllQuerySpec extends ObjectBehavior
             ],
         ])->shouldNotBeCalled();
 
-        $this->execute('hosted.adback.co');
+        $this->execute('foo.bar.co');
     }
 
     public function it_should_purge_all_on_all_resource(Client $client)

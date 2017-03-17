@@ -13,7 +13,7 @@ class PurgeFileQuerySpec extends ObjectBehavior
 {
     function let(Client $client, ListResourcesQuery $listResourcesQuery)
     {
-        $listResourcesQuery->execute()->willReturn([['id' => 1, 'cname' => 'hosted.adback.co'], ['id' => 2, 'cname' => 'hosted.adback.co'], ['id' => 3, 'cname' => 'example.test.com']]);
+        $listResourcesQuery->execute()->willReturn([['id' => 1, 'cname' => 'foo.bar.co'], ['id' => 2, 'cname' => 'foo.bar.co'], ['id' => 3, 'cname' => 'example.test.com']]);
         $client->post(Argument::any(), Argument::any())->willReturn(null);
         $this->beConstructedWith($listResourcesQuery, 'login', 'password', 'url', $client);
     }
@@ -64,6 +64,6 @@ class PurgeFileQuerySpec extends ObjectBehavior
             ],
         ])->shouldNotBeCalled();
 
-        $this->execute('hosted.adback.co', ['file1', 'file 2']);
+        $this->execute('foo.bar.co', ['file1', 'file 2']);
     }
 }
