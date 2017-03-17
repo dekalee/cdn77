@@ -1,0 +1,25 @@
+{
+    "name": "dekalee/cdn77",
+    "description": "A lib to communicate with the cdn77 api",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Nicolas Thal",
+            "email": "nico.th4l@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "guzzlehttp/guzzle": "~6"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0",
+        "henrikbjorn/phpspec-code-coverage": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dekalee\\Cdn77\\": "src/Cdn77"
+        }
+    }
+}
