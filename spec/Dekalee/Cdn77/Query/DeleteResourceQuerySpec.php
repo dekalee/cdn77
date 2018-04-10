@@ -35,7 +35,13 @@ class DeleteResourceQuerySpec extends ObjectBehavior
         ResponseInterface $response,
         StreamInterface $stream
     ) {
-        $client->post('url?id=3login=login&passwd=password')->shouldBeCalled()->willReturn($response);
+        $client->post('url', [
+            'form_params' => [
+                'id' => 3,
+                'login' => 'login',
+                'passwd' => 'password',
+            ]
+        ])->shouldBeCalled()->willReturn($response);
         $response->getBody()->willReturn($stream);
         $stream->getContents()->willReturn(json_encode([
             'status' => 'ok',
