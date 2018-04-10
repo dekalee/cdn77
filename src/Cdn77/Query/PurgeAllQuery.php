@@ -5,7 +5,7 @@ namespace Dekalee\Cdn77\Query;
 /**
  * Class PurgeAllQuery
  */
-class PurgeAllQuery extends AbstractPurgeQuery implements QueryInterface
+class PurgeAllQuery extends AbstractResourcesAwareQuery implements QueryInterface
 {
     const URL = 'https://api.cdn77.com/v2.0/data/purge';
 
