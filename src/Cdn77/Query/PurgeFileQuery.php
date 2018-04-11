@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
 /**
  * Class PurgeFileQuery
  */
-class PurgeFileQuery extends AbstractPurgeQuery implements QueryInterface
+class PurgeFileQuery extends AbstractResourcesAwareQuery implements QueryInterface
 {
     const URL = 'https://api.cdn77.com/v2.0/data/purge';
 
