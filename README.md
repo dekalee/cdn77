@@ -24,3 +24,4 @@ Implemented calls
 - Purge resources
 - Purge specific file
 - Create resource
+- Delete resource
